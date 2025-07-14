@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+      body {
+        font-family: "sofia", sans-serif;
+      }
+    </style>
+    <title>Forms and Input Elements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://media.istockphoto.com/id/175491132/photo/floating-globe-focused-on-the-atlantic-ocean.jpg?s=612x612&w=0&k=20&c=wGqjIwI-4vewKW0NEZzp_MJ7BOaRZoMHhKw9ycIBk40=">
+  </head>
+  <body>
+    <center>
+      <h1 style="font-family: Verdana;">Welcome to this website</h1>
+    </center>
+    <! for the below line we should use lorem100>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores doloribus fugit officia et eligendi sunt veniam eos praesentium dolorem repellat ratione ducimus laborum labore libero dolore non totam id eaque, dolorum soluta necessitatibus esse? Provident ipsum accusamus consequuntur aliquid ea voluptatibus accusantium odio neque eos deserunt rem veritatis perferendis dolore tenetur laudantium commodi eligendi, nostrum dolor quo labore reiciendis sed. Voluptatem cumque repellendus vero, soluta unde cum minima, commodi inventore dolorem tempore ea facilis fuga fugiat, pariatur quas facere iste laudantium voluptas natus assumenda est. Ducimus nemo provident ea asperiores, voluptas inventore placeat molestias error sequi aliquid voluptatem! Temporibus, labore.</p>
+    <P style="font-size:40;"><b>IN this webpage the datas are not stored but we can input the data</b></P>
+    <center>
+      <table>
+        <tr>
+        <td>Name;</td> <td><input type="text"> </td>
+        <td>Gender</td> <td><input type="radio" name="Gender">Male <input type="radio" name="Gender"> female</td>
+        </tr>
+
+        <tr>
+          <td>select any course</td>
+          <td>
+            <select>
+              <option>CSE</option>
+              <option>ECE</option>
+              <option>Mechanical</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Upload file</td>
+          <td>
+            <input type="file">
+          </td>
+        </tr>
+
+        <tr>
+          <td><input type="submit"></td>
+        </tr>
+      </table>
+      <p>Save the document by pressing<kbd>ctrl + s</kbd></p>
+      <form action="temples.html" method="post">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="kabish"><br>
+        <input type="submit" formtarget="_blank" value="submit to new tab">
+
+      </form>
+
+      <form action="" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+          0
+          <input type="range" id="a" name="a" value="50">
+          100+
+          <input type="number" id="b" name="b" value="50" disabled>
+          =
+          <output name="x" for="a b"></output>
+          <br><br>
+          <input type="submit">
+    
+       </form>
+  <button onclick="alert('Hi why did you click that?')">Click this</button>
+  <p>which of these browser are you using</p>
+  <form action="" method="post">
+   <input list="browsers" name="browsers">
+   <datalist id="browsers">
+      <option value="Google">
+      <option value="Edge">
+      <option value="opera">
+   </datalist>
+   <fieldset>
+      <legend>Grouping</legend>
+         <label for="password">Enter password</label><br>
+         <input type="password" id="password" name="password" placeholder="enter password here" maxlength="4" size="20" required><br>
+         <input type="submit" value="submit">
+         <input type="reset" value="reset">
+   </fieldset>
+   <label for="favcolor">Select the favourite color:</label>
+   <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+
+   <label for="date">Date</label>
+   <input type="date" id="date" name="date">
+   <input type="submit" value="submit">
+
+   <br>
+   <label for="files">Select file</label>
+   <input type="file" id="files" name="files" multiple><br>
+  </form>
+
+  <ruby>
+    HX<rp>(</rp><rt>@#</rt><rp>)</rp>
+   </ruby>
+
+      
+  </center>
+  </body>
+</html>

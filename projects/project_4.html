@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Namba Kitchen Delights</title>
+        <style>
+            div {
+                width: 50px;
+                height: 20px;
+                background-color: red;
+                position: relative;
+                animation-duration: 4s;
+                animation-name: move;
+                animation-iteration-count: 1;
+            }
+            @keyframes move {
+                0% {left: 0px; top: 0px;}
+                25% {left:200px; top: 0px;}
+                50% {left: 200px; top: 100px;}
+                75% {left:0px; top: 100px;}
+                100% {left: 0px; top: 0px;}
+                
+            }
+
+            div.load {
+                width: 25px;
+                height: 25px;
+                background-color: black;
+                border-radius: 50%;
+                animation: loading 2s linear 2;
+                transform-origin: center;
+            }
+
+            @keyframes loading {
+                0% {
+                    transform: rotate(0deg) translateX(50px) rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg) translatex(50px) rotate(-360deg);
+                }
+                
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 style="text-align: center; font-family: gill sans;">Namba Kitchen Delights</h1>
+        <center>
+            <div></div>
+            <div class="load"></div>
+        </center>
+        <button type="button" onclick="myfunc()">click me</button>
+        <p id="demo"></p>
+        <script>
+            function myfunc() {
+            document.getElementById('demo').innerHTML="helllo";
+            window.alert('hello')
+            }
+        </script>
+    </body>
+</html>

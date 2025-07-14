@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Canvas</title>
+
+        <style>
+            #div1, #div2 {
+                float: left;
+                width: 350px;
+                height: 70px;
+                margin: 10px;
+                padding: 10px;
+                border: 2px solid #aaaaaa;
+            }
+        </style>
+    </head>
+
+    <body>
+        <canvas id="mycanvas" width="300" height="200" style="border:1px solid #d3d3d3;">Your browser does not support this HTML canvas</canvas>
+
+        <script>
+            var c = document.getElementById("mycanvas");
+            var ctx = c.getContext("2d");
+
+            ctx.moveTo(0,0);
+            ctx.lineTo(200,100);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(95,50,40,0,2 * Math.PI);
+            ctx.stroke();
+
+            ctx.font = "30px Arial";
+            ctx.strokeText("Hello World",50,120);
+        </script>
+        <br>
+        <img id="scream" src="https://www.w3schools.com/html/img_the_scream.jpg" alt="The Scream" width="220" height="277">
+        
+        
+        <script>
+        function myCanvas() {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            var img = document.getElementById("scream");
+            ctx.drawImage(img,10,10);
+            }
+        </script>
+        <br>
+    
+    <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40"
+        stroke="green" stroke-width="4" fill="yellow" />
+    </svg>
+
+    <button onclick="getLocation()">Location</button>
+
+    <p id="loc"></p>
+    <script>
+        const x = document.getElementById("loc");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(success, error);
+            } else {
+                x.innerHTML = "Geolocation is not supported to this browser";
+            }
+        }
+        function success(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+        }
+        function error() {
+            alert("sorry, no position available");
+        }
+
+    </script>
+
+    <script>
+        function dragstartHandler(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function dragoverHandler(ev) {
+            ev.preventDefault();
+        }
+        function dropHandler(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+
+    <h1>Drag and Drop API</h1>
+    <p> now drag the image into empty rectangle</p>
+
+    <div id="div1" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+    <div id="div2" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+        <img id="img1" src="https://www.w3schools.com/html/img_logo.gif" draggable="true" ondragstart="dragstartHandler(event)" width="336" height="69">
+    </div>
+
+    <p>Count numbers: <output id="result"></output></p>
+    <button onclick="startworker()">Start Worker</button>
+    <button onclick="stopworker()">Stop Worker</button>
+
+    <script>
+        let w;
+
+        function startworker() {
+            const x = document.getElementById("result");
+            if (typeof(Worker) !== "undefined") {
+                w = new Worker("js/demo_workers.js");
+                w.onmessage = function (event) {
+                    x.innerHTML = event.data;
+                };
+            } else {
+                x.innerHTML = "Sorry, no Web Worker support.";
+            }
+}
+
+
+        function stopworker() {
+            w.terminate();
+            w = undefined;
+        }
+        window.onload = function() {
+    startworker();
+};
+
+    </script>
+
+</body>
+    </html>
